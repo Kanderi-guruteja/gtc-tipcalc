@@ -6,6 +6,7 @@ const tipPercentageDisplay = document.getElementById("tip-percentage-display");
 
 tipRange.addEventListener("input", () => {
     tipPercentageDisplay.innerText = tipRange.value + "%";
+    calculateTip();
 });
 
 const calculateTip = () => {
@@ -21,4 +22,4 @@ const calculateTip = () => {
 };
 
 billTotal.addEventListener("input", calculateTip);
-tipRange.addEventListener("input", calculateTip);
+calculateTip(); // Initialize the calculation
