@@ -52,9 +52,9 @@ input[type="text"][disabled] {
 }
 
 /* Responsive Design for Mobile */
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 768px) {
     .container {
-        max-width: 95%;
+        max-width: 90%;
     }
     
     input[type="text"], input[type="range"] {
