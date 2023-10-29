@@ -9,9 +9,13 @@ document.addEventListener("DOMContentLoaded", function () {
   billTotalInput.addEventListener("input", calculateTip);
   tipInput.addEventListener("input", calculateTip);
 
-  // **Ruin the existing functionality**
-  // Remove the decimal places from the tip amount
-  tipAmountInput.value = tipAmountInput.value.replace(/\.\d+$/, "");
+  // Add a submit event listener to the Bill Total input field
+  billTotalInput.addEventListener("submit", function (event) {
+    if (billTotalInput.value.match(/[^0-9]/)) {
+      event.preventDefault();
+      alert("Please enter a valid number for the Bill Total.");
+    }
+  });
 
   // Calculate the tip and update the results
   function calculateTip() {
@@ -27,8 +31,8 @@ document.addEventListener("DOMContentLoaded", function () {
       const tipAmount = (billTotal * tipPercentage) / 100;
       const totalWithTip = billTotal + tipAmount;
       tipPercentageDisplay.textContent = tipPercentage + "%";
-      tipAmountInput.value = tipAmount; // **Ruin the existing functionality**
-      totalWithTipInput.value = totalWithTip;
+      tipAmountInput.value = tipAmount.toFixed(2);
+      totalWithTipInput.value = totalWithTip.toFixed(2);
     }
   }
 
