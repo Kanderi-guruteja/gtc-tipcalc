@@ -1,35 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>ITMD 541 - Lab 3 - Guruteja Kanderi - Tip Calculator</title>
+    <title>ITMD 541 - Lab 3 - Tip Calculator</title>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
     <div class="container">
         <h1>Tip Calculator</h1>
         <form id="tip-calculator-form">
-            <div class="input-group">
-                <label for="bill-total">Bill Total:</label>
-                <input type="text" id="bill-total" placeholder="Enter bill total" required>
-            </div>
+            <label for="bill-total">Bill Total:</label>
+            <input type="text" id="bill-total" placeholder="Enter bill total" required>
 
-            <div class="input-group">
-                <label for="tip">Tip Percentage:</label>
-                <input type="range" id="tip" min="0" max="30" value="15">
-                <span id="tip-percentage-display">15%</span>
-            </div>
+            <label for="tip">Tip Percentage:</label>
+            <input type="range" id="tip" min="0" max="100" value="15">
 
-            <div class="result-group">
-                <div>
-                    <label for="tip-amount">Tip Amount:</label>
-                    <input type="text" id="tip-amount" disabled>
-                </div>
+            <label for="tip-amount">Tip Amount:</label>
+            <input type="text" id="tip-amount" disabled>
 
-                <div>
-                    <label for="total-with-tip">Total Bill with Tip:</label>
-                    <input type="text" id="total-with-tip" disabled>
-                </div>
-            </div>
+            <label for="total-with-tip">Total Bill with Tip:</label>
+            <input type="text" id="total-with-tip" disabled>
         </form>
     </div>
     <script src="script.js"></script>
