@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const billTotal = parseFloat(billTotalInput.value);
         const tipPercentage = parseFloat(tipInput.value);
         
-        if (isNaN(billTotal) || isNaN(tipPercentage) || billTotalInput.validity.patternMismatch) {
+        if (isNaN(billTotal) || isNaN(tipPercentage)) {
             alert("Please enter a valid number.");
             billTotalInput.setCustomValidity("Please enter a valid number");
             tipAmountInput.value = "0.00"; // Set Tip Amount to 0
