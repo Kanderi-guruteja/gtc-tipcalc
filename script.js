@@ -1,28 +1,33 @@
-const bill_total = document.querySelector("#bill-total");
-const slider = document.querySelector("#tip");
-const tip_percentage = document.querySelector("#tip-percentage");
-const tip_amount = document.querySelector("#tip-amount");
-const total = document.querySelector("#total");
+document.addEventListener("DOMContentLoaded", function () {
+    const billTotalInput = document.getElementById("bill-total");
+    const tipInput = document.getElementById("tip");
+    const tipPercentageDisplay = document.getElementById("tip-percentage-display");
+    const tipAmountInput = document.getElementById("tip-amount");
+    const totalWithTipInput = document.getElementById("total-with-tip");
 
-bill_total.addEventListener("change", calculateTip);
-slider.addEventListener("input", calculateTip);
+    // Add input event listeners to the Bill Total and Tip input fields
+    billTotalInput.addEventListener("input", calculateTip);
+    tipInput.addEventListener("input", calculateTip);
 
-function calculateTip() {
-  // Check if the Bill Total input field contains any non-numeric characters, including alphabets
-  if (bill_total.value.match(/[^0-9.]/)) {
-    alert("Please enter a valid number for the Bill Total.");
-    return; // Exit the function
-  }
+    // Function to calculate the tip and update the results
+    function calculateTip() {
+        const billTotal = parseFloat(billTotalInput.value);
+        const tipPercentage = parseFloat(tipInput.value);
+        
+        if (isNaN(billTotal) || isNaN(tipPercentage)) {
+            billTotalInput.setCustomValidity("Please enter valid numbers");
+            tipAmountInput.value = "0.00"; // Set Tip Amount to 0
+            totalWithTipInput.value = "0.00"; // Set Total Bill with Tip to 0
+        } else {
+            billTotalInput.setCustomValidity(""); // Clear any previous error
+            const tipAmount = (billTotal * tipPercentage) / 100;
+            const totalWithTip = billTotal + tipAmount;
+            tipPercentageDisplay.textContent = tipPercentage + "%";
+            tipAmountInput.value = tipAmount.toFixed(2);
+            totalWithTipInput.value = totalWithTip.toFixed(2);
+        }
+    }
 
-  bill_total.value = parseFloat(bill_total.value).toFixed(2);
-  let bill = parseFloat(document.getElementById("bill-total").value);
-  let tip = document.getElementById("tip").value;
-
-  tip_percentage.value = tip;
-
-  let total_tip = parseFloat(((tip * bill) / 100).toFixed(2));
-
-  tip_amount.value = total_tip;
-
-  total.value = parseFloat(bill + total_tip).toFixed(2);
-}
+    // Initial calculation
+    calculateTip();
+});
