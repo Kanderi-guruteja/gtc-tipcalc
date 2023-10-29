@@ -14,6 +14,8 @@ document.addEventListener("DOMContentLoaded", function () {
         
         if (isNaN(billTotal)) {
             billTotalInput.setCustomValidity("Please enter a valid number");
+            tipAmountInput.value = "0.00"; // Set Tip Amount to 0
+            totalWithTipInput.value = "0.00"; // Set Total Bill with Tip to 0
         } else {
             billTotalInput.setCustomValidity(""); // Clear any previous error
             const tipPercentage = tipInput.value;
