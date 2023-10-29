@@ -18,6 +18,11 @@ body {
 
 h1 {
     font-size: 24px;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 16px;
     margin-bottom: 20px;
 }
 
@@ -38,6 +43,7 @@ input[type="text"], input[type="range"] {
     border-radius: 5px;
     margin-bottom: 10px;
     font-size: 16px;
+    overflow: hidden; /* Prevents overflow */
 }
 
 input[type="text"][disabled] {
