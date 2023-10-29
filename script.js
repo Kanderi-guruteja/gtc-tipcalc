@@ -7,3 +7,19 @@ billTotal.addEventListener("input", () => {
         billTotal.value = "";
     }
 });
+
+const tipCalculatorForm = document.getElementById("tip-calculator-form");
+const tipRange = document.getElementById("tip");
+const tipAmount = document.getElementById("tip-amount");
+const totalWithTip = document.getElementById("total-with-tip");
+
+tipCalculatorForm.addEventListener("input", () => {
+    const billAmount = parseFloat(billTotal.value);
+    const tipPercentage = parseFloat(tipRange.value);
+    if (!isNaN(billAmount)) {
+        const tip = (billAmount * tipPercentage) / 100;
+        const total = billAmount + tip;
+        tipAmount.value = tip.toFixed(2);
+        totalWithTip.value = total.toFixed(2);
+    }
+});
