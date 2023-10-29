@@ -23,10 +23,4 @@ document.addEventListener("DOMContentLoaded", function () {
             const totalWithTip = billTotal + tipAmount;
             tipPercentageDisplay.textContent = tipPercentage + "%";
             tipAmountInput.value = tipAmount.toFixed(2);
-            totalWithTipInput.value = totalWithTip.toFixed(2);
-        }
-    }
-
-    // Initial calculation
-    calculateTip();
-});
+            totalWithTipInput
