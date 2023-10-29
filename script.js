@@ -11,9 +11,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Add a submit event listener to the Bill Total input field
   billTotalInput.addEventListener("submit", function (event) {
-    if (billTotalInput.value.match(/[^0-9]/)) {
+    // Check if the Bill Total input field contains any non-numeric characters, including alphabets
+    if (billTotalInput.value.match(/[^0-9.]/)) {
       event.preventDefault();
-      alert("Please enter a valid number for the Bill Total.");
+
+      // Display the error message
+      const errorMessage = document.createElement("span");
+      errorMessage.classList.add("error-message");
+      errorMessage.textContent = "Please enter a valid number for the Bill Total.";
+      errorMessage.style.color = "red";
+      errorMessage.style.display = "block";
+
+      billTotalInput.appendChild(errorMessage);
     }
   });
 
