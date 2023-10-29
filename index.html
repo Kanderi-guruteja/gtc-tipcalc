@@ -7,11 +7,11 @@
 <body>
     <div class="container">
         <h1>Tip Calculator</h1>
-        <h2>ITMD 541 - Lab 3 - Guruteja Kanderi</h2> <!-- Added this line -->
+        <h2>ITMD 541 - Lab 3 - Guruteja Kanderi</h2>
         <form id="tip-calculator-form">
             <div class="input-group">
                 <label for="bill-total">Bill Total:</label>
-                <input type="text" id="bill-total" placeholder="Enter bill total" required>
+                <input type="text" id="bill-total" placeholder="Enter bill total" required pattern="\d+(\.\d{2})?" title="Please enter a valid number">
             </div>
 
             <div class="input-group">
@@ -23,7 +23,7 @@
             <div class="result-group">
                 <div>
                     <label for="tip-amount">Tip Amount:</label>
-                    <input type="text" id="tip-amount" disabled>
+                    <input type="text" id "tip-amount" disabled>
                 </div>
 
                 <div>
