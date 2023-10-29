@@ -11,17 +11,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Function to calculate the tip and update the results
     function calculateTip() {
-        const billTotal = parseFloat(billTotalInput.value);
-        const tipPercentage = parseFloat(tipInput.value);
+        const billTotal = billTotalInput.value;
+        const tipPercentage = tipInput.value;
         
-        if (isNaN(billTotal) || isNaN(tipPercentage) || billTotalInput.validity.patternMismatch) {
-            billTotalInput.setCustomValidity("Please enter a valid number");
+        if (!isNumeric(billTotal) || !isNumeric(tipPercentage)) {
+            billTotalInput.setCustomValidity("Please enter valid numbers.");
             tipAmountInput.value = "0.00"; // Set Tip Amount to 0
             totalWithTipInput.value = "0.00"; // Set Total Bill with Tip to 0
         } else {
             billTotalInput.setCustomValidity(""); // Clear any previous error
             const tipAmount = (billTotal * tipPercentage) / 100;
-            const totalWithTip = billTotal + tipAmount;
+            const totalWithTip = parseFloat(billTotal) + tipAmount;
             tipPercentageDisplay.textContent = tipPercentage + "%";
             tipAmountInput.value = tipAmount.toFixed(2);
             totalWithTipInput.value = totalWithTip.toFixed(2);
@@ -30,4 +30,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Initial calculation
     calculateTip();
+
+    function isNumeric(value) {
+        return !isNaN(value) && isFinite(value);
+    }
 });
