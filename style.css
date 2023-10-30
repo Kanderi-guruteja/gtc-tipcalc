@@ -8,8 +8,10 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    min-height: 900px;
     background: linear-gradient(45deg, #2c3e50, #3498db);
+    background-size: 100% 50%;
+    background-repeat: no-repeat;
     color: #fff;
     font-family: Arial, sans-serif;
 }
@@ -23,28 +25,25 @@ body {
 }
 
 .title {
-    font-family: 'WildWest', cursive;
-    font-size: 1.2rem; /* Smaller title */
+    font-size: 1.3rem;
     color: #f48c36;
-    margin-bottom: 10px;
 }
 
 .subtitle {
-    font-size: 1.8rem; /* Bigger "Tip Calculator" */
-    color: #34495e;
-    margin-bottom: 20px;
+    font-size: 2rem;
+    color: #f48c36;
 }
 
 .input-group {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
+    margin: 20px 0;
+    text-align: left;
 }
 
 label {
-    font-size: 1.2rem;
+    display: block;
+    font-size: 1.3rem;
     color: #f48c36;
-    margin-right: 10px;
+    margin-bottom: 5px;
 }
 
 input[type="text"] {
@@ -52,20 +51,10 @@ input[type="text"] {
     border-radius: 5px;
     padding: 5px;
     color: #2c3e50;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
+}
+
+input[type="range"] {
     width: 100%;
-}
-
-.input-group .result-group {
-    display: flex;
-    justify-content: space-between;
-}
-
-.result-group label {
-    font-size: 1.2rem;
-}
-
-span#tip-percentage-display {
-    font-size: 1.2rem;
-    color: #2c3e50;
+    height: 25px;
 }
