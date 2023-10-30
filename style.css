@@ -24,13 +24,13 @@ body {
 
 .title {
     font-family: 'WildWest', cursive;
-    font-size: 1.5rem;
+    font-size: 1.2rem; /* Smaller title */
     color: #f48c36;
     margin-bottom: 10px;
 }
 
 .subtitle {
-    font-size: 1.3rem;
+    font-size: 1.8rem; /* Bigger "Tip Calculator" */
     color: #34495e;
     margin-bottom: 20px;
 }
