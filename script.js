@@ -13,14 +13,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Function to calculate the tip and update the results
     function calculateTip() {
-        billTotalInput.addEventListener("input", function () {
-        const numberPattern = /^[0-9]+$/;
-        const inputValue = billTotalInput.value;
-        if (numberPattern.test(inputValue) || inputValue == "") {
-            errorText.textContent = "";
-        } else {
-            errorText.textContent = "Please enter a valid number.";
+       billTotalInput.addEventListener("input", function () {
+        const billTotal = parseFloat(billTotalInput.value);
+        
+        if (isNaN(billTotal) || billTotal < 0) {
+            alert("ENTER A VALID INPUT");
+            return;
         }
+   
     });
     }
 
