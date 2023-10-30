@@ -13,13 +13,15 @@ document.addEventListener("DOMContentLoaded", function () {
     function calculateTip() {
         const billTotal = parseFloat(billTotalInput.value);
         const tipPercentage = parseFloat(tipInput.value);
+        const billTotalIsValid = /^[0-9]+(\.[0-9]{1,2})?$/.test(billTotalInput.value);
 
-        if (isNaN(billTotal) || isNaN(tipPercentage)) {
-            billTotalInput.setCustomValidity("Please enter valid numbers");
-            tipAmountInput.value = "0.00";
-            totalWithTipInput.value = "0.00";
+        if (!billTotalIsValid || isNaN(tipPercentage)) {
+            alert("Please enter a valid number.");
+            billTotalInput.setCustomValidity("Please enter a valid number");
+            tipAmountInput.value = "0.00"; // Set Tip Amount to 0
+            totalWithTipInput.value = "0.00"; // Set Total Bill with Tip to 0
         } else {
-            billTotalInput.setCustomValidity("");
+            billTotalInput.setCustomValidity(""); // Clear any previous error
             const tipAmount = (billTotal * tipPercentage) / 100;
             const totalWithTip = billTotal + tipAmount;
             tipPercentageDisplay.textContent = tipPercentage + "%";
