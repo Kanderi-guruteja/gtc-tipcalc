@@ -1,7 +1,7 @@
 // Function to calculate the tip and update the results
 function calculateTip() {
   // Check if the bill total and tip percentage inputs contain any non-numeric characters
-  if (billTotalInput.value.match(/[^0-9.]/) || tipInput.value.match(/[^0-9.]/)) {
+  if (billTotalInput.value.match(/[^0-9]/) || tipInput.value.match(/[^0-9.]/)) {
     // Throw an error
     throw new Error("Invalid input. Please enter numbers only.");
   }
