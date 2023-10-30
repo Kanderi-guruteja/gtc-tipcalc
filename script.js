@@ -11,11 +11,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Function to calculate the tip and update the results
     function calculateTip() {
-        const billTotal = parseFloat(billTotalInput.value);
+        const billTotal = billTotalInput.value;
         const tipPercentage = parseFloat(tipInput.value);
-        const billTotalIsValid = /^-?\d*(\.\d{0,2})?$/.test(billTotalInput.value);
 
-        if (!billTotalIsValid || isNaN(billTotal) || isNaN(tipPercentage)) {
+        if (!/^\d*\.?\d{0,2}$/.test(billTotal)) {
             alert("Please enter a valid number.");
             billTotalInput.setCustomValidity("Please enter a valid number");
             tipAmountInput.value = "0.00"; // Set Tip Amount to 0
