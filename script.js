@@ -20,13 +20,15 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
-        billTotalInput.setCustomValidity(""); // Clear any previous error
-        const tipPercentage = tipInput.value;
-        const tipAmount = (billTotal * tipPercentage) / 100;
-        const totalWithTip = billTotal + tipAmount;
-        tipPercentageDisplay.textContent = tipPercentage + "%";
-        tipAmountInput.value = tipAmount.toFixed(2);
-        totalWithTipInput.value = totalWithTip.toFixed(2);
+        billTotalInput.addEventListener("input", function () {
+        const numberPattern = /^[0-9]+$/;
+        const inputValue = billTotalInput.value;
+        if (numberPattern.test(inputValue) || inputValue == "") {
+            errorText.textContent = "";
+        } else {
+            errorText.textContent = "Please enter a valid number.";
+        }
+    });
     }
 
     // Initial calculation
