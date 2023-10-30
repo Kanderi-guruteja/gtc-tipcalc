@@ -16,12 +16,12 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
-h1 {
+.title {
     font-size: 24px;
     margin-bottom: 10px;
 }
 
-h2 {
+.subtitle {
     font-size: 16px;
     margin-bottom: 20px;
 }
@@ -68,4 +68,3 @@ input[type="text"][disabled] {
         font-size: 14px;
     }
 }
-
