@@ -1,7 +1,6 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 body {
@@ -9,11 +8,12 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 900px;
-    background: linear-gradient(45deg, #2c3e50, #3498db);
-    background-size: 100% 50%;
+    background: linear-gradient(45deg, #2c3e50, #3498db),
+                url('guru.jpg'); /* Set the background image */
+    background-size: cover;
     background-repeat: no-repeat;
-    color: #fff;
-    font-family: Arial, sans-serif;
+    color: #fff; /* Text color */
+    font-family: Arial, sans-serif; /* Font family */
 }
 
 .container {
@@ -21,29 +21,28 @@ body {
     padding: 35px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    text-align: center;
+}
+
+form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
 }
 
 .title {
     font-size: 1.3rem;
     color: #f48c36;
+    margin-bottom: 5px;
 }
 
 .subtitle {
     font-size: 2rem;
-    color: #f48c36;
+    color: #9b59b6;
 }
 
 .input-group {
-    margin: 20px 0;
-    text-align: left;
-}
-
-label {
-    display: block;
-    font-size: 1.3rem;
-    color: #f48c36;
-    margin-bottom: 5px;
+    display: flex;
+    flex-direction: column;
 }
 
 input[type="text"] {
@@ -51,10 +50,8 @@ input[type="text"] {
     border-radius: 5px;
     padding: 5px;
     color: #2c3e50;
-    font-size: 1.3rem;
 }
 
-input[type="range"] {
-    width: 100%;
-    height: 25px;
+span#tip-percentage-display {
+    color: #34495e;
 }
