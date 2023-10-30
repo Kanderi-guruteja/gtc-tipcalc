@@ -13,7 +13,8 @@ document.addEventListener("DOMContentLoaded", function () {
     function calculateTip() {
         const billTotal = parseFloat(billTotalInput.value);
         const tipPercentage = parseFloat(tipInput.value);
-        const billTotalIsValid = /^[0-9]*\.?[0-9]*$/.test(billTotalInput.value.trim()) && billTotalInput.value.trim() !== '';
+        const billTotalIsValid = /^\s*$|^[0-9]*\.?[0-9]*$/.test(billTotalInput.value.trim());
+
 
 
 
