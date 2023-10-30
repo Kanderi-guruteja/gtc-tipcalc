@@ -5,8 +5,11 @@ document.addEventListener("DOMContentLoaded", function () {
     const tipAmountInput = document.getElementById("tip-amount");
     const totalWithTipInput = document.getElementById("total-with-tip");
 
-    // Add input event listeners to the Bill Total input field
+    // Add an input event listener to the Bill Total input field
     billTotalInput.addEventListener("input", calculateTip);
+
+    // Add an input event listener to the Tip Percentage range input
+    tipInput.addEventListener("input", calculateTip);
 
     // Function to calculate the tip and update the results
     function calculateTip() {
