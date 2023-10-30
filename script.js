@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const totalWithTipInput = document.getElementById("total-with-tip");
 
     billTotalInput.addEventListener("input", calculateTip);
+    tipInput.addEventListener("input", calculateTip);
 
     function calculateTip() {
         const billTotal = parseFloat(billTotalInput.value);
@@ -13,9 +14,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (isNaN(billTotal) || isNaN(tipPercentage) || billTotalInput.validity.patternMismatch) {
             alert("Please enter a valid number.");
-            billTotalInput.value = ""; // Clear the input field
-            tipAmountInput.value = "0.00"; // Set Tip Amount to 0
-            totalWithTipInput.value = "0.00"; // Set Total Bill with Tip to 0
+            billTotalInput.value = "";
+            tipAmountInput.value = "0.00";
+            totalWithTipInput.value = "0.00";
         } else {
             billTotalInput.setCustomValidity("");
             const tipAmount = (billTotal * tipPercentage) / 100;
